@@ -12,7 +12,9 @@ class App extends React.Component {
       urlNext: "",
       urlPrev: "",
       error: "",
-      recordCollection: []
+      recordCollection: [],
+      currentAlbum: "",
+      showDeets: false,
     }
   }
 
@@ -39,12 +41,38 @@ getPrevPage = () => {
   this.getRecords(this.state.urlPrev)
 }
 
+getAlbumDeets = (url, img) => {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => this.displayDeets(data, img))
+}
+
+displayDeets = (data, img) => {
+  const tracklist = data.tracklist.map(song => song.title)
+  this.setState({
+    showDeets: true,
+    currentAlbum: {
+      image: img,
+      artist: data.artists[0].name,
+      title: data.title,
+      tracks: tracklist
+    }
+  })
+}
+
+hideDeets = () => {
+  this.setState({
+    showDeets: false
+  })
+}
+
   render() {
     const records = this.state.recordCollection.map(record => {
       return <Record 
       key={record.id} 
+      showDeets={this.getAlbumDeets}
       img={record.basic_information.cover_image}
-      link={record.basic_information.master_url} 
+      link={record.basic_information.resource_url} 
       artist={record.basic_information.artists[0].name} 
       title={record.basic_information.title}/>
     })
@@ -53,11 +81,20 @@ getPrevPage = () => {
         <Header nextPage={this.getNextPage} prevPage={this.getPrevPage}/>
         {!this.state.recordCollection.length && 
         <h1 className="loading">LOADING...</h1>}
+        {this.state.showDeets  && 
+        <div className="record-prev"
+        onClick={this.hideDeets}>
+          <h1>{this.state.currentAlbum.artist}</h1>
+          <h1>{this.state.currentAlbum.title}</h1>
+          <img src={this.state.currentAlbum.image} />
+          <div>{this.state.currentAlbum.tracks.map(track => <p>{track}</p>)}</div>
+        </div>}
         <div className="record-grid">
           { records }
         </div>
         {this.state.error &&
-        <h1 className="error">{this.state.error}</h1>
+        <h1 
+          onClick={this.getRecords(this.state.url)} className="error">{this.state.error}</h1>
         }
       </div>
     )      

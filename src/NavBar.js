@@ -2,7 +2,7 @@ import React from "react"
 
 const NavBar = ({nextPage, prevPage}) => {
   return(
-    <div>
+    <div className="navbar">
       <button onClick={() => prevPage()} >Previous Page</button>
       <button onClick={() => nextPage()} >Next Page</button>
     </div>

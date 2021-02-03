@@ -1,9 +1,8 @@
 import React from "react"
 
 const Record = (props) => {
-  console.log(props)
   return(
-    <div className="record">
+    <div onClick={() => props.showDeets(props.link, props.img)} className="record">
      <div className="background" 
       style={{
         backgroundImage: `url("${props.img}")`,

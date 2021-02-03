@@ -4,13 +4,37 @@ body {
 }
 
 .record-grid {
+  padding: 1%;
   background-color: burlywood;
-  width: 100%;
+  width: auto;
   position: absolute;
   top: 22%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-row: auto;
+  grid-gap: 1%;
+}
+
+.record-prev {
+  background-color: hsl(40, 100%, 97%, 0.8);
+  z-index: 3;
+  position: fixed;
+  top: 30%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  left: 30%;
+  right: 30%;
+}
+
+.record-prev img {
+  height: 350px;
+}
+.record-prev p {
+  margin: 0;
 }
 
 .loading, .error {
@@ -18,7 +42,7 @@ body {
   background-color: burlywood;
   position: absolute;
   left: 35%;
-  top: 20%;
+  top: 25%;
   font-size: 4rem;
 }
 
@@ -28,17 +52,46 @@ body {
 }
 
 .record {
-  margin: 2%;
   padding: 1%;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: auto;
   border: black solid 1px;
-  /* display: inline; */
   overflow: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
 .album-info {
   background-color: hsl(40, 100%, 97%, 0.6);
-  width: 250px;
   height: 250px;
+  width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .record-grid {
+    top: 11%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .record-prev {
+    top: 14%;
+    left: 0;
+    right: 0;
+  }
+
+  .album-info {
+    height: 100px;
+    width: auto;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 0.5rem;
+  }
 }
