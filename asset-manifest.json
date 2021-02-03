@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/record-shelf/static/css/main.1beca829.chunk.css",
+    "main.js": "/record-shelf/static/js/main.ff12944e.chunk.js",
+    "main.js.map": "/record-shelf/static/js/main.ff12944e.chunk.js.map",
+    "runtime-main.js": "/record-shelf/static/js/runtime-main.ad6f5229.js",
+    "runtime-main.js.map": "/record-shelf/static/js/runtime-main.ad6f5229.js.map",
+    "static/js/2.da7ca5a2.chunk.js": "/record-shelf/static/js/2.da7ca5a2.chunk.js",
+    "static/js/2.da7ca5a2.chunk.js.map": "/record-shelf/static/js/2.da7ca5a2.chunk.js.map",
+    "static/js/3.a100095c.chunk.js": "/record-shelf/static/js/3.a100095c.chunk.js",
+    "static/js/3.a100095c.chunk.js.map": "/record-shelf/static/js/3.a100095c.chunk.js.map",
+    "index.html": "/record-shelf/index.html",
+    "static/css/main.1beca829.chunk.css.map": "/record-shelf/static/css/main.1beca829.chunk.css.map",
+    "static/js/2.da7ca5a2.chunk.js.LICENSE.txt": "/record-shelf/static/js/2.da7ca5a2.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/record-shelf/static/media/backdrop.17742ac1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad6f5229.js",
+    "static/js/2.da7ca5a2.chunk.js",
+    "static/css/main.1beca829.chunk.css",
+    "static/js/main.ff12944e.chunk.js"
+  ]
+}
