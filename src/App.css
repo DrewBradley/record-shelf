@@ -1,7 +1,18 @@
 .App {
+  width: auto;
+}
+
+.record-grid {
+  width: 100%;
+  position: absolute;
+  top: 20%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-row: auto;
+}
+
+.loading {
+  font-size: 4rem;
 }
 
 .record {

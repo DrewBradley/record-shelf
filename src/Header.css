@@ -1,0 +1,16 @@
+.header-section {
+  z-index: 1;
+  height: 20%;
+  width: 100%;
+  position: fixed;
+  background-color: brown;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 3rem;
+}
