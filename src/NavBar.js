@@ -1,11 +1,10 @@
 import React from "react"
 
-const NavBar = () => {
+const NavBar = ({nextPage, prevPage}) => {
   return(
     <div>
-      <button>Page 1</button>
-      <button>Page 2</button>
-      <button>Page 3</button>
+      <button onClick={() => prevPage()} >Previous Page</button>
+      <button onClick={() => nextPage()} >Next Page</button>
     </div>
   )
 }

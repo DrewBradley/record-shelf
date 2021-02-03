@@ -1,18 +1,30 @@
-.App {
+body {
   width: auto;
+  background-color: burlywood;
 }
 
 .record-grid {
+  background-color: burlywood;
   width: 100%;
   position: absolute;
-  top: 20%;
+  top: 22%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-row: auto;
 }
 
-.loading {
+.loading, .error {
+  text-align: center;
+  background-color: burlywood;
+  position: absolute;
+  left: 35%;
+  top: 20%;
   font-size: 4rem;
+}
+
+.error {
+  border: black 1px solid;
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .record {
@@ -21,5 +33,12 @@
   width: 250px;
   height: 250px;
   border: black solid 1px;
+  /* display: inline; */
   overflow: hidden;
+}
+
+.album-info {
+  background-color: hsl(40, 100%, 97%, 0.6);
+  width: 250px;
+  height: 250px;
 }
