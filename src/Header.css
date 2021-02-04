@@ -42,5 +42,9 @@ button:active {
     height: 10%;
   }
   
+  .header-title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
   
 }

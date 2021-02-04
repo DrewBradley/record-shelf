@@ -15,19 +15,29 @@ body {
   grid-gap: 1%;
 }
 
-.record-prev {
-  background-color: hsl(40, 100%, 97%, 0.8);
+.record-prev-container {
   z-index: 3;
   position: fixed;
-  top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.record-prev {
+  background-color: hsl(40, 100%, 97%);
+  margin: auto;
+  position: fixed;
   padding: 1%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-self: center;
-  left: 30%;
-  right: 30%;
+
 }
 
 .record-prev img {
@@ -37,16 +47,21 @@ body {
   margin: 0;
 }
 
-.loading, .error {
-  text-align: center;
-  background-color: burlywood;
-  position: absolute;
-  left: 35%;
-  top: 25%;
+.message-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
   font-size: 4rem;
 }
 
 .error {
+  font-size: 2rem;
+  background-color: blanchedalmond;
   border: black 1px solid;
   box-shadow: 5px 5px 15px 5px #000000;
 }
@@ -74,12 +89,6 @@ h1 {
   .record-grid {
     top: 11%;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .record-prev {
-    top: 14%;
-    left: 0;
-    right: 0;
   }
 
   .album-info {

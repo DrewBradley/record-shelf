@@ -55,7 +55,8 @@ displayDeets = (data, img) => {
       image: img,
       artist: data.artists[0].name,
       title: data.title,
-      tracks: tracklist
+      tracks: tracklist,
+      video: data.videos[0].uri
     }
   })
 }
@@ -80,21 +81,30 @@ hideDeets = () => {
       <div className="App">
         <Header nextPage={this.getNextPage} prevPage={this.getPrevPage}/>
         {!this.state.recordCollection.length && 
-        <h1 className="loading">LOADING...</h1>}
+        <div className="message-container">
+          <h1 className="loading">LOADING...</h1>
+        </div>
+        }
         {this.state.showDeets  && 
-        <div className="record-prev"
-        onClick={this.hideDeets}>
-          <h1>{this.state.currentAlbum.artist}</h1>
-          <h1>{this.state.currentAlbum.title}</h1>
-          <img src={this.state.currentAlbum.image} />
-          <div>{this.state.currentAlbum.tracks.map(track => <p>{track}</p>)}</div>
-        </div>}
+          <div className="record-prev-container"
+            onClick={this.hideDeets}>
+            <section className="record-prev">
+              <h1>{this.state.currentAlbum.artist}</h1>
+              <a target="_blank" rel="noreferrer" href={this.state.currentAlbum.video}>
+              <h1>{this.state.currentAlbum.title}</h1>
+              </a>
+              <img alt={this.state.currentAlbum.title} src={this.state.currentAlbum.image} />
+              <div>{this.state.currentAlbum.tracks.map(track => <p>{track}</p>)}</div>
+            </section>
+          </div>}
         <div className="record-grid">
           { records }
         </div>
         {this.state.error &&
-        <h1 
-          onClick={this.getRecords(this.state.url)} className="error">{this.state.error}</h1>
+        <div className="message-container">
+          <h1 
+            onClick={this.getRecords(this.state.url)} className="error">{this.state.error}</h1>
+        </div>
         }
       </div>
     )      
