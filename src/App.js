@@ -8,7 +8,7 @@ class App extends React.Component {
     super()
     this.state = {
       page: 1,
-      url: "https://api.discogs.com/users/DrewBradley/collection/folders/0/releases?key=XCoBKpyLqjFhJXxBfsqM&secret=ANrZFtLrARjnFXzMRHdQcpEpJPvErVfn",
+      url: "https://api.discogs.com/users/DrewBradley/collection/folders/0/releases?key=XCoBKpyLqjFhJXxBfsqM&secret=ANrZFtLrARjnFXzMRHdQcpEpJPvErVfn&sort=artist",
       urlNext: "",
       urlPrev: "",
       error: "",
